@@ -22,13 +22,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MacDaddy Background" translatesAutoresizingMaskIntoConstraints="NO" id="tT0-lc-Jen">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Soph Icon" translatesAutoresizingMaskIntoConstraints="NO" id="38h-ee-6iS">
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Soph Icon" translatesAutoresizingMaskIntoConstraints="NO" id="38h-ee-6iS">
                                 <rect key="frame" x="63" y="42" width="250" height="250"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="2sw-3Q-KEM"/>
                                     <constraint firstAttribute="width" secondItem="38h-ee-6iS" secondAttribute="height" multiplier="1:1" id="2wM-q1-CHK"/>
                                     <constraint firstAttribute="width" constant="250" id="kSH-Iv-1Fh"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="IU4-lZ-qOT" appends="YES" id="7EM-2m-H2w"/>
+                                </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="320-2o-aMp">
                                 <rect key="frame" x="203" y="475" width="123" height="30"/>
@@ -41,6 +45,9 @@
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cameraTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CNw-OG-9cf"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4E-Aa-flC">
                                 <rect key="frame" x="56" y="475" width="123" height="30"/>
@@ -56,6 +63,9 @@
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="libraryTappedWith_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="W13-Gu-QjS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose an Image to punch!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zfd-BX-Jdb">
                                 <rect key="frame" x="71" y="432" width="234" height="29"/>
@@ -85,8 +95,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="picture" destination="38h-ee-6iS" id="fm6-Rl-8ge"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="IU4-lZ-qOT">
+                    <connections>
+                        <action selector="guyTappedWith_sender:" destination="BYZ-38-t0r" id="ZS1-SQ-DJm"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="37.600000000000001" y="32.833583208395808"/>
         </scene>
